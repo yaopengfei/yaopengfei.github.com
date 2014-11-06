@@ -1,138 +1,56 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
-   <meta name="description" content="This is my first web">
-   <meta name="keywords" content=hold on,加油，坚持，努力">
-   <title>CowGirl.home</title>
-   <link rel="stylesheet" type="text/css" href="demo.css">
+    <meta charset="utf-8">
+    <meta name="description" content="This is Caveolin">
+    <meta name="keywords" content="hold on,加油，坚持，努力">
+    <title>小窝</title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <script type="text/javascript">
+      
+     function changetext(id){
+     id.innerHTML="西财小窝";
+     }
+     function chengjiao() {
+         document.getElementById("signature").innerHTML = "我不怕别人阻挡，就怕自己投降";
+     }
+     function zhangjing(){
+         document.getElementById("signature").innerHTML = "希望再见面的时候。<br/>我们都是最好的自己。。";
+     }
+     function dudandan(){
+     document.getElementById("signature").innerHTML="快乐的生活、做快乐的自己。。";
+     }
+     function heyan(){
+         document.getElementById("signature").innerHTML = "现在，让我们倒着来活吧，<br/>从八十到十八,让时间逆流。<br/>去掉那些如果，想想这就是重生，<br/>如何不辜负这大好的年华，<br/>做一个自己幸福的人。";
+     }
+     function maomin(){
+     document.getElementById("signature").innerHTML="留下或者离开";
+     }
+     function mutong(){
+         document.getElementById("signature").innerHTML = "花开的每一个季节都有它的意义，<br/>我愿生命是一个从容的过程，<br/>宁静相待，了然欢欣。。。";
+     } 
+    </script>
 </head>
 
-<body >
-   <div id="head">
-       <div class="logo_title">
-           <h1>牧童遥指杏花村</h1>
-           <h2>Home!</h2>
+<body>
+
+    <div id="header">
+        <h1>小窝</h1>
+    </div>
+    <div id="main">
+        <div id="chengjiao"><img class="imageSize" src="/chengjiao/chengjiao.jpg" onclick="chengjiao()"></div>
+        <div id="zhangjing"><img class="imageSize" src="/zhangjing/zhangjing.jpg" onclick="zhangjing()"></div>
+        <div id="dudandan"><img class="imageSize" src="/dudandan/dudandan.jpg" onclick="dudandan()"></div>
+
+        <div id="heyan"><img class="imageSize" src="/heyan/heyan.jpg" onclick="heyan()"></div>
+         <div id="mutong"><img class="imageSize" src="/mutong/mutong.jpg" onclick="mutong()">  </div> 
+        <div id="maomin"><img  class="imageSize" src="/maomin/maomin.jpg" onclick="maomin()">  </div>              
+         
+       <div  id="sig"><h1 id="signature" onclick="changetext(this)">点下你的头像吧！</h1>
+       <div id="wallPicture">
+           <a href="/pictureWall/pictureWall.html">picture-墙</a>
        </div>
-       <div class="navi">
-           <ul>
-             <li><a href="">首页</a> </li>
-             <li> <a href="">加油篇</a> </li>
-             <li><a href="">努力篇</a></li>
-          </ul>
-       </div>
-   <div class="clear"></div>
-   </div>
-  <div id="wrapper">
-       <div class="main">
-
-            <div class="item">
-
-                 <div class="item_img">
-                    <img src="item1.jpg" alt="我的图片">
-
-                 </div>
-
-                 <div class="item_content">
-                     <h3>文章名字</h3>
-                     <p class="item_info">作者信息</p>
-                     <p class="item_desc">文章内容</p>
-                 </div>
-
-            </div>
-          <div class="item">
-
-                 <div class="item_img">
-                    <img src="item1.jpg" alt="我的图片">
-
-                 </div>
-
-                 <div class="item_content">
-                     <h3>文章名字</h3>
-                     <p class="item_info">作者信息</p>
-                     <p class="item_desc">文章内容</p>
-                 </div>
-
-            </div>
-          <div class="item">
-
-                 <div class="item_img">
-                    <img src="item1.jpg" alt="我的图片">
-
-                 </div>
-
-                 <div class="item_content">
-                     <h3>文章名字</h3>
-                     <p class="item_info">作者信息</p>
-                     <p class="item_desc">文章内容</p>
-                 </div>
-
-            </div>
-          <div class="item">
-
-                 <div class="item_img">
-                    <img src="item1.jpg" alt="我的图片">
-
-                 </div>
-
-                 <div class="item_content">
-                     <h3>文章名字</h3>
-                     <p class="item_info">作者信息</p>
-                     <p class="item_desc">文章内容</p>
-                 </div>
-           </div>
-             <div class="item">
-
-                 <div class="item_img">
-                    <img src="item1.jpg" alt="我的图片">
-
-                 </div>
-
-                 <div class="item_content">
-                     <h3>文章名字</h3>
-                     <p class="item_info">作者信息</p>
-                     <p class="item_desc">文章内容</p>
-                 </div>
-
-            </div>
-
-   </div>
-      <div class="side">
-          <div class="author_info">
-             <div class="author_img">
-                <img src="author.jpg" alt="cowgirl jpg">
-             </div>
-             <div class="author_desc">
-                  <h4>牧童</h4>
-                  <p>牧童遥指杏花村</p>
-             </div>
-          </div>
-          <div class="top_article">
-               <h3>我的文章</h3>
-               <ul>
-                    <li>我的好文章</li>
-                      <li>我的好文章</li>
-                        <li>我的好文章</li>
-                          <li>我的好文章</li>
-                            <li>我的好文章</li>
-                            <li>我的好文章</li>
-
-               </ul>
-          </div>
-          <div class="site_info">
-          <p>访客</p>
-          </div>
-
-
-      </div>
-
-      <div class="clear"></div>
-  </div>
-  <div id="footer">
-     <div class="site_about"></div>
-     <div class="site_link"></div>
-
-  </div>
+    </div>
+    </div>
 </body>
 </html>

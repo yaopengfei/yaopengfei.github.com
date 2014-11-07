@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -29,6 +29,16 @@
      function mutong(){
          document.getElementById("signature").innerHTML = "花开的每一个季节都有它的意义，<br/>我愿生命是一个从容的过程，<br/>宁静相待，了然欢欣。。。";
      } 
+     function jump()
+    {
+        
+    var pwd= window.prompt("请输入密码：",'');
+    if (pwd == "xiaowo") {
+            window.location ="/pictureWall/index.html";
+    } else {
+    alert("密码错误");
+       }
+   }
     </script>
 </head>
 
@@ -41,16 +51,27 @@
         <div id="chengjiao"><img class="imageSize" src="/chengjiao/chengjiao.jpg" onclick="chengjiao()"></div>
         <div id="zhangjing"><img class="imageSize" src="/zhangjing/zhangjing.jpg" onclick="zhangjing()"></div>
         <div id="dudandan"><img class="imageSize" src="/dudandan/dudandan.jpg" onclick="dudandan()"></div>
-
         <div id="heyan"><img class="imageSize" src="/heyan/heyan.jpg" onclick="heyan()"></div>
          <div id="mutong"><img class="imageSize" src="/mutong/mutong.jpg" onclick="mutong()">  </div> 
-        <div id="maomin"><img  class="imageSize" src="/maomin/maomin.jpg" onclick="maomin()">  </div>              
-         
-       <div  id="sig"><h1 id="signature" onclick="changetext(this)">点下你的头像吧！</h1>
-       <div id="wallPicture">
-           <a href="/pictureWall/pictureWall.html">picture-墙</a>
-       </div>
+        <div id="maomin"><img  class="imageSize" src="/maomin/maomin.jpg" onclick="maomin()">  </div>
+        <div id="smallhome"><img  src="smallhome.png" ></div>                 
     </div>
+    <div  id="sig"><h1 id="text">这是一群</br>
+    </br>
+    像火、像水、像电、像雷、像风</br>
+    </br>
+    一样的女子</br>
+    </br>
+    没心没肺的大笑</br>
+    </br>
+    肆无忌惮的高兴</br>
+    </br>
+    她们的小窝充满笑声和欢乐</br>
+    </br>
+    <h2 id="signature" onclick="changetext(this)">去猛点你的头像，唤起你的记忆！！！</h2>
+    </div>
+    <div id="wallPicture">
+    <a href="#" onclick="jump()">上墙了</a>
     </div>
 </body>
 </html>

@@ -1,0 +1,44 @@
+body{
+	background-image: url("wall1.jpg");
+	background-size: cover;
+	font-family: "Helvetica Neue",Arial,'Liberation Sans',FreeSans,'Hiragine Sans GB',sans-serif;
+	/*设置网页字体，上面每个逗号中间的都代表一种字体 浏览器先查找第一个字体，如果有就用，没有就继续查找后面的*/
+}
+#header{
+	text-align: center;	
+	font-size: 45px;
+}
+#head{
+	position: relative;
+	/*background-color: pink;*/
+	margin:0;
+	/*margin-top:-100px;*/
+}
+#main{
+	height: 400px;
+}
+#mutong{
+	float: left;
+	margin-left: 40px;
+	clear: both;
+}
+#chengjiao{
+	float: right;
+	position: relative;
+	margin-right: 500px;
+
+}
+#wall{
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	font-size: 20px;
+}
+#main h2{
+	font-size: 25px;
+	color: yellow;
+}
+#wall h2{
+	color: red;
+}

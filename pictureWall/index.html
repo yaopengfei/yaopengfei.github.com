@@ -6,12 +6,48 @@
     <meta name="keywords" content="照片">
     <title>picture-墙</title>
     <link rel="stylesheet" type="text/css" href="demopicture.css">
+    <script type="text/javascript">
+    function zhuanpai()
+    {
+    var pwd= window.prompt("请输入密码：",'');
+    if (pwd == "123456") {
+        window.location = "http://www.baidu.com";
+    } else {
+    alert("密码错误");
+    </script>
 </head>
 <body>
 <div id="main">
-      <h1 text-align="center">上墙了</h1>
-	
+     <div id="head">
+     	<h1 id="header">上墙了</h1>
+     </div> 
+     <div id="mutong">
+     	 <h2>小丸子</h2>
+         <h3>小丸子最近的状态：</h3>
+         <div id="status">
+         	<ul>
+         		<li><a href="http://user.qzone.qq.com/170433085/mood/3d9a280a3b854354b0290900.1">空间</a></li>
+         		<li><a href="">照片</a></li>
+         	</ul>
+         </div>
+     </div>
+      <div id="chengjiao">
+     	 <h2>成大哥</h2>
+         <h3>成大哥最近的状态：</h3>
+         <div id="status">
+         	<ul>
+         		<li><a href="http://user.qzone.qq.com/576983267">空间</a></li>
+         		<li><a href="">照片</a></li>
+         	</ul>
+         </div>
+     </div>   
 </div>
+   <div id="wall" >
+     	<h2  color="red">想上墙的话，抓紧哦！！！位置有限</h2>
+   </div>
+   <!-- <div>
+       <a id="lian" href="#" onclick="zhuanpai()"></a>
+    </div> -->
   
 </body>
 </html>

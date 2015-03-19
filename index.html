@@ -1,77 +1,176 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="This is Caveolin">
-    <meta name="keywords" content="hold on,加油，坚持，努力">
-    <title>小窝</title>
-    <link rel="stylesheet" type="text/css" href="demo.css">
-    <script type="text/javascript">
-      
-     function changetext(id){
-     id.innerHTML="西财小窝";
-     }
-     function chengjiao() {
-         document.getElementById("signature").innerHTML = "我不怕别人阻挡，就怕自己投降";
-     }
-     function zhangjing(){
-         document.getElementById("signature").innerHTML = "希望再见面的时候。<br/>我们都是最好的自己。。";
-     }
-     function dudandan(){
-     document.getElementById("signature").innerHTML="快乐的生活、做快乐的自己。。";
-     }
-     function heyan(){
-         document.getElementById("signature").innerHTML = "现在，让我们倒着来活吧，<br/>从八十到十八,让时间逆流。<br/>去掉那些如果，想想这就是重生，<br/>如何不辜负这大好的年华，<br/>做一个自己幸福的人。";
-     }
-     function maomin(){
-     document.getElementById("signature").innerHTML="留下或者离开";
-     }
-     function mutong(){
-         document.getElementById("signature").innerHTML = "花开的每一个季节都有它的意义，<br/>我愿生命是一个从容的过程，<br/>宁静相待，了然欢欣。。。";
-     } 
-     function jump()
-    {
-        
-    var pwd= window.prompt("请输入密码：",'');
-    if (pwd == "xiaowo") {
-            window.location ="/pictureWall/index.html";
-    } else {
-    alert("密码错误");
-       }
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script>
+
+    var ms=1;
+    var state=0;
+    var x1len;
+    var x2len;
+    var x3len;
+    var x4len;
+    var mywidth;
+    var myclock;
+    $(document).on("pageinit","#pageOne",function(){
+	 
+	    $("#time0").css("visibility","hidden");
+		$("#start").on("tap",function(){
+		    $("#time0").css("visibility","visible");
+			ms=0;		
+			$("#time").text(ms+"秒");
+			state=0;
+            myclock=setTimeout("display();",50);
+		
+		});
+		$("#game").on("hover",function(){
+
+                  mywidth=parseInt($("#rightMinEdge").position().left)-parseInt($("#leftMaxEdge").position().left);
+         x1len=parseInt($(".div1").width());
+			  x2len=parseInt($(".div2").width());
+				 x3len=parseInt($(".div3").width());
+				 x4len=parseInt($(".div4").width());
+		});
+	  });
+
+function display(){
+
+                 myclock=setTimeout("display();",50);
+                 mywidth=parseInt($("#rightMinEdge").position().left)-parseInt($("#leftMaxEdge").position().left);
+                 x1len=parseInt($(".div1").width());
+                 x2len=parseInt($(".div2").width());
+                 x3len=parseInt($(".div3").width());
+                 x4len=parseInt($(".div4").width());
+
+                 if((state==0)&&(x1len>=mywidth)&&(x2len>=mywidth)&&x3len>=mywidth&&(x4len>=mywidth)){
+                  state=1;
+                  then=new Date();
+                  then.setTime(then.getTime()-ms);
+                }
+               	if(state==1){
+               		now=new Date();
+               		ms=now.getTime()-then.getTime();
+               		ms=ms/1000;
+               		$("#time").text(ms+"秒");
+                  if((x1len<mywidth)||(x2len<mywidth)||x3len<mywidth||(x4len<mywidth)){
+                        now=new Date();
+                        ms=now.getTime()-then.getTime();
+                        ms=ms/1000;
+                        $("#time").text(ms+"秒");
+						clearTimeout(myclock);
+					    $("#time").css("font-weight","bold");                    
+
+          
+
+               	}
+
+
+              }
+               }
+
+</script>
+<style>
+.div1,.div2 ,.div3 ,.div4{
+	height:40px;
+	width:80%;
+	border-radius: 5px;
+	background-color: #ff9900;
+	margin:5px auto;
+	box-shadow: 5px 5px 5px #888888;
+	-webkit-transition:width 9s;
+	-webkit-transition-timing-function:ease-out;
+	transition:width 9s;
+	transition-timing-function:ease-out;
+	-moz-transition:width 9s;
+	-moz-transition-timing-function:ease-out;
+	-o-transition:width 9s;
+	-o-transition-timing-function:ease-out;	
+}
+div{
+	width:100%;
+}
+#game{
+   margin:auto;
+   height:100%;
+}
+body{
+	text-align: center;
+	margin:auto;
    }
-    </script>
+.div1:hover{
+	width:100%;
+
+}
+.div2:hover{
+	width:100%;
+
+}
+.div3:hover{
+	width:100%;
+
+}
+.div4:hover{
+	width:100%;
+
+}
+
+#rightMinEdge{
+        width:1px;
+		height:100%;
+		background-color:red;
+		position:absolute;
+		top:0;
+		left:91%;
+}
+
+#leftMaxEdge{
+        width:1px;
+		height:100%;
+		background-color:red;
+		position:absolute;
+		top:0;
+		left:9%;
+}
+#tail{
+margin-top:10%;
+}
+</style>
 </head>
 
 <body>
 
-    <div id="header">
-        <h1>小窝</h1>
-    </div>
-    <div id="main">
-        <div id="chengjiao"><img class="imageSize" src="/chengjiao/chengjiao.jpg" onclick="chengjiao()"></div>
-        <div id="zhangjing"><img class="imageSize" src="/zhangjing/zhangjing.jpg" onclick="zhangjing()"></div>
-        <div id="dudandan"><img class="imageSize" src="/dudandan/dudandan.jpg" onclick="dudandan()"></div>
-        <div id="heyan"><img class="imageSize" src="/heyan/heyan.jpg" onclick="heyan()"></div>
-         <div id="mutong"><img class="imageSize" src="/mutong/mutong.jpg" onclick="mutong()">  </div> 
-        <div id="maomin"><img  class="imageSize" src="/maomin/maomin.jpg" onclick="maomin()">  </div>
-        <div id="smallhome"><img  src="smallhome.png" ></div>                 
-    </div>
-    <div  id="sig"><h1 id="text">这是一群</br>
-    </br>
-    像火、像水、像电、像雷、像风</br>
-    </br>
-    一样的女子</br>
-    </br>
-    没心没肺的大笑</br>
-    </br>
-    肆无忌惮的高兴</br>
-    </br>
-    她们的小窝充满笑声和欢乐</br>
-    </br>
-    <h2 id="signature" onclick="changetext(this)">去猛点你的头像，唤起你的记忆！！！</h2>
-    </div>
-    <div id="wallPicture">
-    <a href="#" onclick="jump()">上墙了</a>
-    </div>
+<div data-role="page" id="pageOne" >
+<div data-role="header" data-position="fixed" >
+<h1>你用多长时间</h1>
+</div>
+<div ui-content" >
+
+<div id="rightMinEdge">
+</div>
+ <div id="leftMaxEdge">
+</div>
+   <div id="game">
+   <h1 id="title1">你用多长时间</h1>
+<a id="start"  href="#"  data-role="button" data-inline="true">开始</a>
+<p id="time0"><span style="font-style:bold">Time</span>:<span id="time">0</span></p>
+      <div  class="div1">
+	  </div>
+	   <div  class="div2">
+	   </div>
+	   <div  class="div3">
+	  </div>
+	  <div  class="div4">
+	  </div>
+	 <p id="tail">谁让四个方形条同时超过红线的<br>时间最长！！！</p>   
+  </div>
+
+</div>
+<div data-role="footer" data-position="fixed">
+	<h1 >author:Yao</h1>
+</div>
+</div>
 </body>
 </html>
